@@ -14,8 +14,8 @@ def service_mgmt(action, service):
                    response_message: output from the service call
                    success: boolean if command was successful
     """
-    # TODO: implement actually calling the service binary using subprocess
-	command = ['/usr/sbin/service', + ",'" + service + "','" + action + "'"]
+    # Calls the service binary using subprocess
+    command = ['/usr/sbin/service', service, action]
 
     # execute command using Popen
     p = Popen(command, stdout=PIPE, stderr=PIPE)
